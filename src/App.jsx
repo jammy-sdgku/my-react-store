@@ -3,19 +3,25 @@ import './App.css'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+//import QuantityPicker from './components/QuantityPicker';
+import Catalog from './pages/catalog';
+ import DataServiceTest from './components/DataServiceTest';
 
 function App() {
   
-
   return (
     <>
       <Navbar></Navbar>
 
-      <Header></Header>
+      <Header></Header><br></br>
+
+      <Catalog></Catalog>
+      {/*<QuantityPicker></QuantityPicker>*/}
 
       <main className="main-content">
+        <DataServiceTest></DataServiceTest>
         <div className="hero-section">
-          <h1>Welcome to My Online Store</h1>
+          <h1>Welcome to James' Online Store</h1>
           <p className="hero-subtitle">
             Discover amazing products at incredible prices. Your satisfaction is
             our top priority!

@@ -30,6 +30,19 @@ margin-bottom: 1rem;
 color: #666;
 }
 
+.features-grid {
+  display: flex;
+}
+
+
+.feature-card{
+  flex: 1;
+}
+
+.features-section h2 {
+  text-align: center;
+}
+
 .footer-section p {
   color: white;
 }
