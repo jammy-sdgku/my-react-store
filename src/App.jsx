@@ -5,21 +5,24 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 //import QuantityPicker from './components/QuantityPicker';
 import Catalog from './pages/catalog';
- import DataServiceTest from './components/DataServiceTest';
+//import DataServiceTest from './components/DataServiceTest';
+//import DataService from './services/DataService';
 
 function App() {
   
   return (
-    <>
-      <Navbar></Navbar>
+    <div className='App'> 
+      <Navbar />
 
-      <Header></Header><br></br>
+      <Header /><br></br>
 
-      <Catalog></Catalog>
       {/*<QuantityPicker></QuantityPicker>*/}
 
       <main className="main-content">
-        <DataServiceTest></DataServiceTest>
+
+      {/*<Catalog loaded here>*/}
+       <Catalog />
+
         <div className="hero-section">
           <h1>Welcome to James' Online Store</h1>
           <p className="hero-subtitle">
@@ -58,8 +61,8 @@ function App() {
         </div>
       </main>
 
-      <Footer></Footer>
-    </>
+      <Footer />
+    </div>
   );
 }
 
