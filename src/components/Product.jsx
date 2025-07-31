@@ -1,5 +1,6 @@
 import { useState } from "react";
 import QuantityPicker from "../components/QuantityPicker";
+
 function Product({
   product,
   showDescription = true,
@@ -11,6 +12,7 @@ function Product({
   // Local state for component interactions
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const [quantity, setQuantity] = useState(1);
   // Destructure product data for easier access
   const {
     id,
@@ -35,11 +37,16 @@ function Product({
   const handleImageLoad = () => setImageLoaded(true);
   const handleImageError = () => setImageError(true);
   // Handle add to cart action
-  const handleAddToCart = () => {
+ 
+  const handleAddToCart = (product) => {
     if (onAddToCart && inStock) {
       onAddToCart(product);
     }
-  };
+      console.log(`Added to cart: ${title} (Quantity:
+  ${quantity})`);
+      alert(`Added ${quantity} x ${title} to cart!`);
+    };
+
   // Handle view details action
   const handleViewDetails = () => {
     if (onViewDetails) {
@@ -136,7 +143,10 @@ function Product({
           )}
           <span className="product__current-price">${price.toFixed(2)}</span>
         </div>
-        <QuantityPicker />
+        <QuantityPicker initialQuantity={1}
+              minQuantity={1}
+              maxQuantity={10}
+              onChange={setQuantity}/>
         {/* Action Buttons */}
         <div className="product__actions">
           <button

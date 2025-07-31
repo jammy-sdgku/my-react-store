@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import ProductList from "../components/ProductList";
-import QuantityPicker from "../components/QuantityPicker";
 import DataService from "../services/DataService";
 function Catalog() {
   // State for products and loading
@@ -16,7 +15,7 @@ function Catalog() {
   // State for categories
   const [categories, setCategories] = useState([]);
   // State for demo quantity picker
-  const [demoQuantity, setDemoQuantity] = useState(1);
+  /*const [quantity, setQuantity] = useState(1);*/
   // Load initial data when component mounts
   useEffect(() => {
     const loadData = async () => {
@@ -83,11 +82,12 @@ function Catalog() {
     setFilteredProducts(filtered);
   }, [products, searchTerm, selectedCategory, sortBy, showOnlyInStock]);
   // Handle add to cart (demo function)
-  const handleAddToCart = (product) => {
+ /* const handleAddToCart = (product) => {
     console.log(`Added to cart: ${product.title} (Quantity:
-${demoQuantity})`);
-    alert(`Added ${demoQuantity} x ${product.title} to cart!`);
+${quantity})`);
+    alert(`Added ${quantity} x ${product.title} to cart!`);
   };
+  */
   // Handle view details (demo function)
   const handleViewDetails = (product) => {
     console.log("View details for:", product);
@@ -104,7 +104,8 @@ ${demoQuantity})`);
           </p>
         </div>
         {/* Demo Section - Quantity Picker */}
-        <div className="catalog__demo-section">
+ {/* 
+       <div className="catalog__demo-section">
           <h3>Interactive Quantity Picker</h3>
           <div className="demo-controls">
             <label>Select quantity for cart operations:</label>
@@ -112,11 +113,12 @@ ${demoQuantity})`);
               initialQuantity={1}
               minQuantity={1}
               maxQuantity={10}
-              onChange={setDemoQuantity}
+              onChange={setQuantity}
             />
           </div>
         </div>
-        <span>Selected: {demoQuantity}</span>
+        <span>Selected: {quantity}</span>
+        */}
         {/* Filter Controls */}
         <div className="catalog__filters">
           <div className="filter-row">
@@ -192,7 +194,7 @@ ${demoQuantity})`);
           error={error}
           showDescription={true}
           showFeatures={true}
-          onAddToCart={handleAddToCart}
+          /*onAddToCart=*/
           onViewDetails={handleViewDetails}
         />
       </div>
