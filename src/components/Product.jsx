@@ -1,4 +1,5 @@
 import { useState } from "react";
+import QuantityPicker from "../components/QuantityPicker";
 function Product({
   product,
   showDescription = true,
@@ -135,6 +136,7 @@ function Product({
           )}
           <span className="product__current-price">${price.toFixed(2)}</span>
         </div>
+        <QuantityPicker />
         {/* Action Buttons */}
         <div className="product__actions">
           <button

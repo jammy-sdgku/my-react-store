@@ -105,7 +105,7 @@ ${demoQuantity})`);
         </div>
         {/* Demo Section - Quantity Picker */}
         <div className="catalog__demo-section">
-          <h3>Interactive Quantity Picker Demo</h3>
+          <h3>Interactive Quantity Picker</h3>
           <div className="demo-controls">
             <label>Select quantity for cart operations:</label>
             <QuantityPicker

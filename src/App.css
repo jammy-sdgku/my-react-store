@@ -655,6 +655,7 @@ Catalog
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .demo-controls label {
