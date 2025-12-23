@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import QuantityPicker from "../components/QuantityPicker";
+import { CartContext } from "../context/CartContext.jsx";
 
 function Product({
   product,
   showDescription = true,
   showFeatures = false,
   compact = false,
-  onAddToCart,
   onViewDetails,
 }) {
+  // Access the addToCart function from the context
+  const { addToCart } = useContext(CartContext);
   // Local state for component interactions
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -37,15 +39,12 @@ function Product({
   const handleImageLoad = () => setImageLoaded(true);
   const handleImageError = () => setImageError(true);
   // Handle add to cart action
- 
-  const handleAddToCart = (product) => {
-    if (onAddToCart && inStock) {
-      onAddToCart(product);
-    }
-      console.log(`Added to cart: ${title} (Quantity:
-  ${quantity})`);
+  const handleAddToCart = () => {
+    if (inStock) {
+      addToCart(product, quantity);
       alert(`Added ${quantity} x ${title} to cart!`);
-    };
+    }
+  };
 
   // Handle view details action
   const handleViewDetails = () => {
@@ -143,10 +142,12 @@ function Product({
           )}
           <span className="product__current-price">${price.toFixed(2)}</span>
         </div>
-        <QuantityPicker initialQuantity={1}
-              minQuantity={1}
-              maxQuantity={10}
-              onChange={setQuantity}/>
+        <QuantityPicker
+          initialQuantity={1}
+          minQuantity={1}
+          maxQuantity={10}
+          onChange={setQuantity}
+        />
         {/* Action Buttons */}
         <div className="product__actions">
           <button

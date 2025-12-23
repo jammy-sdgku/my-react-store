@@ -1,27 +1,28 @@
-
-import './App.css'
-import Header from './components/Header'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import "./App.css";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 //import QuantityPicker from './components/QuantityPicker';
-import Catalog from './pages/catalog';
+import Catalog from "./pages/catalog";
+import Cart from "./components/Cart";
 //import DataServiceTest from './components/DataServiceTest';
 //import DataService from './services/DataService';
 
 function App() {
-  
   return (
-    <div className='App'> 
+    <div className="App">
       <Navbar />
 
-      <Header /><br></br>
+      <Header />
+      <br></br>
 
       {/*<QuantityPicker></QuantityPicker>*/}
 
       <main className="main-content">
+        {/*<Catalog loaded here>*/}
+        <Catalog />
 
-      {/*<Catalog loaded here>*/}
-       <Catalog />
+        <Cart />
 
         <div className="hero-section">
           <h1>Welcome to James' Online Store</h1>
@@ -66,4 +67,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

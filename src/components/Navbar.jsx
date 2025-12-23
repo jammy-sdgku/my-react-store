@@ -8,16 +8,29 @@ function Navbar() {
         <div className="navbar-menu">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a href="#home" className="nav-link">Home</a>
+              <a href="#home" className="nav-link">
+                Home
+              </a>
             </li>
             <li className="nav-item">
-              <a href="#catalog" className="nav-link">Catalog</a>
+              <a href="#about" className="nav-link">
+                About
+              </a>
             </li>
             <li className="nav-item">
-              <a href="#about" className="nav-link">About</a>
+              <a href="#catalog" className="nav-link">
+                Catalog
+              </a>
             </li>
             <li className="nav-item">
-              <a href="#contact" className="nav-link">Contact</a>
+              <a href="#cart" className="nav-link">
+                Cart
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#contact" className="nav-link">
+                Contact
+              </a>
             </li>
           </ul>
         </div>
