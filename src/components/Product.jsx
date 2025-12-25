@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import QuantityPicker from "../components/QuantityPicker";
 import { CartContext } from "../context/CartContext.jsx";
+import "./Product.css";
 
 function Product({
   product,
@@ -172,4 +173,5 @@ function Product({
     </div>
   );
 }
+
 export default Product;

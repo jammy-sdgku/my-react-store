@@ -1,4 +1,6 @@
 import Product from "./Product";
+import "./ProductList.css";
+
 function ProductList({
   products = [],
   loading = false,
@@ -9,59 +11,32 @@ function ProductList({
   onViewDetails,
 }) {
   // Handle loading state
-  if (loading) {
+  if (loading)
+    return <p className="product-list__message">Loading products...</p>;
+  if (error)
     return (
-      <div className="product-list product-list--loading">
-        <div className="loading-message">
-          <div className="loading-spinner"></div>
-          <p>Loading products...</p>
-        </div>
-      </div>
+      <p className="product-list__message product-list__message--error">
+        {error}
+      </p>
     );
+  if (products.length === 0) {
+    return <p className="product-list__message">No products found.</p>;
   }
-  // Handle error state
-  if (error) {
-    return (
-      <div className="product-list product-list--error">
-        <div className="error-message">
-          <h3>Oops! Something went wrong</h3>
-          <p>{error}</p>
-          <button
-            className="btn btn-primary"
-            onClick={() => window.location.reload()}
-          >
-            Try Again
-          </button>
-        </div>
-      </div>
-    );
-  }
-  // Handle empty state
-  if (!products || products.length === 0) {
-    return (
-      <div className="product-list product-list--empty">
-        <div className="empty-message">
-          <h3>No products found</h3>
-          <p>Try adjusting your search or browse our categories.</p>
-        </div>
-      </div>
-    );
-  }
+
   return (
     <div className="product-list">
-      <div className="product-grid">
-        {products.map((product) => (
-          <Product
-            key={product.id}
-            product={product}
-            showDescription={showDescription}
-            showFeatures={showFeatures}
-            onAddToCart={onAddToCart}
-            onViewDetails={onViewDetails}
-          />
-        ))}
-      </div>
+      {products.map((product) => (
+        <Product
+          key={product.id}
+          product={product}
+          showDescription={showDescription}
+          showFeatures={showFeatures}
+          onAddToCart={onAddToCart}
+          onViewDetails={onViewDetails}
+        />
+      ))}
     </div>
   );
 }
+
 export default ProductList;

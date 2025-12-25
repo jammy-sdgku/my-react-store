@@ -7,6 +7,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
+.cart h1 {
+    color: #333;
+    text-align: center;
+}
+
 .cart h2 {
     margin-top: 0;
     border-bottom: 1px solid #eee;
@@ -30,6 +35,11 @@
 
 .cart-item:last-child {
     border-bottom: none;
+}
+
+.cartImage {
+    width: 200px;
+    border-radius: 40px;
 }
 
 .cart-item-image {
@@ -67,4 +77,14 @@
 
 .cart-summary h3 {
     margin-bottom: 15px;
+}
+
+.pic1 {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }

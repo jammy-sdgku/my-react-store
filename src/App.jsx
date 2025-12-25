@@ -2,68 +2,33 @@ import "./App.css";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-//import QuantityPicker from './components/QuantityPicker';
-import Catalog from "./pages/catalog";
+import Catalog from "./pages/Catalog.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Admin from "./pages/Admin.jsx";
+import Contact from "./pages/Contact.jsx";
 import Cart from "./components/Cart";
-//import DataServiceTest from './components/DataServiceTest';
-//import DataService from './services/DataService';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-
-      <Header />
-      <br></br>
-
-      {/*<QuantityPicker></QuantityPicker>*/}
-
-      <main className="main-content">
-        {/*<Catalog loaded here>*/}
-        <Catalog />
-
-        <Cart />
-
-        <div className="hero-section">
-          <h1>Welcome to James' Online Store</h1>
-          <p className="hero-subtitle">
-            Discover amazing products at incredible prices. Your satisfaction is
-            our top priority!
-          </p>
-          <div className="hero-actions">
-            <button className="btn btn-primary">Shop Now</button>
-            <button className="btn btn-secondary">Learn More</button>
-          </div>
-        </div>
-        <div className="features-section">
-          <h2>Why Choose Us?</h2>
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">🚚</div>
-              <h3>Free Shipping</h3>
-              <p>Free shipping on orders over $50</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🔒</div>
-              <h3>Secure Payment</h3>
-              <p>Your payment information is safe with us</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">↩</div>
-              <h3>Easy Returns</h3>
-              <p>30-day return policy, no questions asked</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">⭐</div>
-              <h3>Quality Products</h3>
-              <p>Carefully curated selection of premium items</p>
-            </div>
-          </div>
-        </div>
-      </main>
-
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

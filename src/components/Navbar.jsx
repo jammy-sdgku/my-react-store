@@ -1,36 +1,46 @@
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-brand">
-          🛍 <h1>James' Online Store</h1>
+          <Link to="/" className="nav-link">
+            🛍 <h1>James' Online Store</h1>
+          </Link>
         </div>
         <div className="navbar-menu">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a href="#home" className="nav-link">
+              <Link to="/" className="nav-link">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#about" className="nav-link">
+              <Link to="/about" className="nav-link">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#catalog" className="nav-link">
+              <Link to="/catalog" className="nav-link">
                 Catalog
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#cart" className="nav-link">
+              <Link to="/cart" className="nav-link">
                 Cart
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#contact" className="nav-link">
+              <Link to="/contact" className="nav-link">
                 Contact
-              </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/admin" className="nav-link">
+                Admin
+              </Link>
             </li>
           </ul>
         </div>
