@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ProductList from "../components/ProductList";
 import DataService from "../services/DataService";
+import "./Catalog.css";
 function Catalog() {
   // State for products and loading
   const [products, setProducts] = useState([]);
@@ -14,8 +15,7 @@ function Catalog() {
   const [showOnlyInStock, setShowOnlyInStock] = useState(false);
   // State for categories
   const [categories, setCategories] = useState([]);
-  // State for demo quantity picker
-  /*const [quantity, setQuantity] = useState(1);*/
+
   // Load initial data when component mounts
   useEffect(() => {
     const loadData = async () => {
@@ -81,13 +81,7 @@ function Catalog() {
     });
     setFilteredProducts(filtered);
   }, [products, searchTerm, selectedCategory, sortBy, showOnlyInStock]);
-  // Handle add to cart (demo function)
- /* const handleAddToCart = (product) => {
-    console.log(`Added to cart: ${product.title} (Quantity:
-${quantity})`);
-    alert(`Added ${quantity} x ${product.title} to cart!`);
-  };
-  */
+
   // Handle view details (demo function)
   const handleViewDetails = (product) => {
     console.log("View details for:", product);
@@ -100,25 +94,11 @@ ${quantity})`);
         <div className="catalog__header">
           <h1>Product Catalog</h1>
           <p>
-            Discover our amazing collection of {filteredProducts.length} products.
+            Discover our amazing collection of {filteredProducts.length}{" "}
+            products.
           </p>
         </div>
-        {/* Demo Section - Quantity Picker */}
- {/* 
-       <div className="catalog__demo-section">
-          <h3>Interactive Quantity Picker</h3>
-          <div className="demo-controls">
-            <label>Select quantity for cart operations:</label>
-            <QuantityPicker
-              initialQuantity={1}
-              minQuantity={1}
-              maxQuantity={10}
-              onChange={setQuantity}
-            />
-          </div>
-        </div>
-        <span>Selected: {quantity}</span>
-        */}
+
         {/* Filter Controls */}
         <div className="catalog__filters">
           <div className="filter-row">

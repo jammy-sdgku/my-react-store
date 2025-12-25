@@ -1,0 +1,43 @@
+.contact {
+    padding: 20px;
+    text-align: center;
+}
+
+.contactForm {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #6a6a6a;
+    border-radius: 20px;
+    padding: 1.25em;
+    background-color: #e4e7eb;
+    text-align: center;
+}
+
+.form-control {
+    display: flex;
+    padding: 10px;
+    margin-bottom: 1.25em;
+    margin-left: 1.25em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    width: 90%;
+
+}
+
+.form-label {
+    text-align: left;
+}
+
+.mb-3 {
+    text-align: left;
+}
+
+#form-btn {
+    padding-top: 1.25em;
+    text-align: center;
+    align-items: center;
+    margin: 1.25em;
+}

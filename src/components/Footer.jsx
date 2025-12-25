@@ -1,9 +1,20 @@
+import "./footer.css";
+
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-content" style={{ display: 'flex', justifyContent:'center', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
-          <div className="footer-section" style={{flex:1, textAlign:'center'}} >
+        <div
+          className="footer-content"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            className="footer-section"
+            style={{ flex: 1, textAlign: "center" }}
+          >
             <h4>Quick Links</h4>
             <ul className="footer-links">
               <li>
@@ -20,7 +31,10 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className="footer-section" style={{flex:1, textAlign:'center'}} >
+          <div
+            className="footer-section"
+            style={{ flex: 1, textAlign: "center" }}
+          >
             <h4>Contact Info</h4>
             <p>📧 support@mystore.com</p>
             <p>📞 1-800-MYSTORE</p>
@@ -29,7 +43,9 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-            <p style={{textAlign:"center"}}>&copy; 2025 My Online Store. All rights reserved.</p>
+        <p style={{ textAlign: "center" }}>
+          &copy; 2025 My Online Store. All rights reserved.
+        </p>
       </div>
     </footer>
   );
