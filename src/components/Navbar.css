@@ -3,7 +3,7 @@ NAVBAR STYLES
 =================== */
 .navbar {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #FFFDD0;
+    color: rgb(249, 249, 90);
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -29,16 +29,8 @@ NAVBAR STYLES
     margin: 0;
     font-size: 1.8rem;
     font-weight: 700;
-    background: linear-gradient(45deg, #fff, #f0f0f0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: #FFFDD0;
-}
-
-.navbar-menu {
-    display: flex;
-    align-items: center;
+    color: rgb(249, 249, 90);
+    /* The following lines creating the gradient effect have been removed */
 }
 
 .navbar-nav {
@@ -54,7 +46,7 @@ NAVBAR STYLES
 }
 
 .nav-link {
-    color: #FFFDD0;
+    color: rgb(249, 249, 90);
     text-decoration: none;
     padding: 0.75rem 1rem;
     border-radius: 6px;
@@ -62,6 +54,10 @@ NAVBAR STYLES
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+}
+
+.nav-link h1 {
+    color: rgb(249, 249, 90);
 }
 
 .nav-link:hover {
